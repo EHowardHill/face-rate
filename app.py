@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://root:Shebang01#!@localhost:5432/db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://ethan:Shebang01#!@face-server.database.windows.net:1433/db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
