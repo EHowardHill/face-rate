@@ -1,0 +1,15 @@
+{
+    "name": "Face Vote",
+    "description": "My first Heroku app, here goes nothing",
+    "image": "heroku/python",
+    "repository": "https://github.com/EHowardHill/face-rate",
+    "keywords": ["python", "flask" ],
+    "env": {},
+    "environments": {
+      "test": {
+        "scripts": {
+          "test": "python app.py"
+        }
+      }
+    }
+}
