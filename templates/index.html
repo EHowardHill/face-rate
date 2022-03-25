@@ -44,6 +44,9 @@
                     "men": $("#men").is(':checked'),
                     "women": $("#women").is(':checked')
                 }, function(data) {
+                    if (data["error"] != '') {
+                        alert(data["error"]);
+                    }
                     $("#leftPic").attr('src', data["src1"]);
                     $("#leftPic").attr('onclick',"report('/static/" + data["src1"] + "')");
                     $("#leftPic").attr('name', data["src1"]);

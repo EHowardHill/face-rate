@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://ethan:Shebang01#!@face-server.database.windows.net:1433/db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://ethan:Shebang01#!@face-server.database.windows.net:1433/db?driver=SQL+Server'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -32,6 +32,7 @@ def hello(name=None):
 def submit():
 
     success = False
+    error = ''
 
     try:
         id = int(request.form.get("photo")[8:].replace('/static/', '').replace('.jpg', ''))
@@ -51,12 +52,14 @@ def submit():
         success = True
 
     except Exception as e:
-        print(str(e))
+        success = False
+        error = str(e)
         success = False
 
     return(
         {
             "valid": success,
             "src1": '/static/' + random_photo(),
-            "src2": '/static/' + random_photo()
+            "src2": '/static/' + random_photo(),
+            "error": error
         })
