@@ -45,7 +45,7 @@ The highest rated male face among people who like women is photo **No.489**, whi
 
 ![No.489](https://github.com/EHowardHill/face-rate/blob/main/static/489.jpg?raw=true)
 
-## Demographic Statistics##
+## Demographic Statistics
 
 Each of the photos was classified into **college-age (<25)**, **young adult (25-32)**, **adult (32-43)**, **older adult (44-53)**, or **senior (54-100)**. Sex and age detected was handled by an open-cv-based age detection algorithm.
 
@@ -71,7 +71,7 @@ Among people who like women:
 - **11** college-age
 - **9** young adult
 
-##Statistical Analysis##
+## Statistical Analysis
 
 - All faces were voted on at least once. This means that no matter what you look like, someone thinks you're a good option :)
 - **People who like men** tend to find **both men and women** to be attractive, while **people who like women** tend to favor women.
